@@ -36,7 +36,8 @@ export class MercedAgent {
     path: string,
     body?: Record<string, unknown> | FormData,
   ): Promise<T> {
-    const auth = await sign_request(this.privateKey, method, path);
+    const signPath = path.split("?")[0];
+    const auth = await sign_request(this.privateKey, method, signPath);
 
     const headers: Record<string, string> = {
       "X-Wallet": auth.wallet,
