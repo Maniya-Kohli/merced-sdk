@@ -282,4 +282,4 @@ import type {
 
 ## License
 
-MIT
+MIT ||
